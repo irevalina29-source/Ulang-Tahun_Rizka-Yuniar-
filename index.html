@@ -1,0 +1,354 @@
+k<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Sweet 16 - Rizka Yuniar</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#ff9ec4,#ffd6e8,#fff5fa);
+    overflow-x:hidden;
+    text-align:center;
+    color:#444;
+}
+
+/* Latar belakang bintang */
+.star{
+    position:fixed;
+    color:white;
+    animation:berkedip 2s infinite;
+    pointer-events:none;
+}
+
+@keyframes berkedip{
+    0%,100%{opacity:0.3;}
+    50%{opacity:1;}
+}
+
+/* Judul */
+.hero{
+    padding:50px 20px 20px;
+}
+
+.hero h1{
+    font-size:45px;
+    color:#ff4f8b;
+    animation:muncul 1s ease;
+}
+
+.hero h2{
+    margin-top:10px;
+    color:#ff6fa5;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+.card{
+    background:white;
+    max-width:500px;
+    margin:25px auto;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    animation:muncul 1.5s ease;
+}
+
+@keyframes muncul{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+button{
+    background:#ff4f8b;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    margin:8px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.cake{
+    font-size:120px;
+    cursor:pointer;
+    transition:0.5s;
+    margin:15px 0;
+}
+
+.cake:hover{
+    transform:scale(1.1);
+}
+
+#status{
+    color:#ff4f8b;
+    font-weight:bold;
+}
+
+/* Surat */
+#surat{
+    display:none;
+    margin-top:20px;
+    background:#fff7fb;
+    padding:20px;
+    border-radius:20px;
+    text-align:left;
+    line-height:1.8;
+}
+
+/* Kenangan */
+.memories{
+    margin-top:25px;
+}
+
+.memories ul{
+    text-align:left;
+    margin-top:10px;
+    padding-left:25px;
+    line-height:2;
+}
+
+/* Confetti */
+.confetti{
+    position:fixed;
+    width:12px;
+    height:12px;
+    top:-20px;
+    animation:jatuh linear forwards;
+}
+
+@keyframes jatuh{
+    to{
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+        opacity:0;
+    }
+}
+
+/* Footer */
+footer{
+    margin:40px 20px;
+    color:#666;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Bintang -->
+<script>
+for(let i=0;i<40;i++){
+    let star=document.createElement("div");
+    star.className="star";
+    star.innerHTML="✦";
+    star.style.left=Math.random()*100+"vw";
+    star.style.top=Math.random()*100+"vh";
+    star.style.fontSize=(Math.random()*15+10)+"px";
+    star.style.animationDuration=(Math.random()*3+1)+"s";
+    document.body.appendChild(star);
+}
+</script>
+
+<div class="hero">
+    <h1>🎂 Happy Sweet 16 🎂</h1>
+    <h2>Rizka Yuniar</h2>
+    <p>16 Juni • 16 Tahun ✨</p>
+</div>
+
+<div class="card">
+
+    <p>
+        Hari ini adalah hari yang sangat spesial,
+        karena seseorang yang luar biasa sedang
+        merayakan ulang tahunnya yang ke-16.
+    </p>
+
+    <br>
+
+    <div class="cake" id="cake" onclick="tiupLilin()">
+        🎂
+    </div>
+
+    <p id="status">
+        Klik kuenya untuk meniup lilin 🕯️
+    </p>
+
+    <br>
+
+    <button onclick="bukaSurat()">
+        💌 Buka Surat Ucapan
+    </button>
+
+    <button onclick="tampilkanHarapan()">
+        🌷 Harapan Spesial
+    </button>
+
+    <div id="surat">
+        <h3>Untuk Rizka Yuniar 💕</h3>
+
+        <p>
+            Selamat ulang tahun yang ke-16, Rizka Yuniar.
+        </p>
+
+        <p>
+            Semoga di usia yang baru ini,
+            kamu selalu diberikan kesehatan,
+            kebahagiaan, dan kekuatan untuk
+            menghadapi setiap tantangan.
+        </p>
+
+        <p>
+            Semoga semua impian yang sedang
+            kamu perjuangkan satu per satu
+            dapat terwujud.
+        </p>
+
+        <p>
+            Jangan pernah takut untuk mencoba,
+            jangan pernah berhenti bermimpi,
+            dan tetaplah menjadi dirimu sendiri.
+        </p>
+
+        <p>
+            Terima kasih telah menjadi pribadi
+            yang baik, kuat, dan penuh semangat.
+        </p>
+
+        <p>
+            Semoga tahun ini dipenuhi tawa,
+            cinta, persahabatan, dan kenangan
+            indah yang tidak akan terlupakan.
+        </p>
+
+        <p>
+            Happy Birthday, Rizka Yuniar! 🥳🎉💖
+        </p>
+    </div>
+
+    <div class="memories" id="harapan" style="display:none;">
+        <h3>✨ 16 Harapan untuk Usia 16 Tahun ✨</h3>
+
+        <ul>
+            <li>🌸 Selalu sehat.</li>
+            <li>🌸 Panjang umur.</li>
+            <li>🌸 Bahagia setiap hari.</li>
+            <li>🌸 Dikelilingi orang baik.</li>
+            <li>🌸 Lancar sekolah.</li>
+            <li>🌸 Nilai semakin bagus.</li>
+            <li>🌸 Mimpi tercapai.</li>
+            <li>🌸 Rezeki melimpah.</li>
+            <li>🌸 Percaya diri.</li>
+            <li>🌸 Berani mencoba hal baru.</li>
+            <li>🌸 Banyak pengalaman indah.</li>
+            <li>🌸 Persahabatan yang tulus.</li>
+            <li>🌸 Keluarga selalu bahagia.</li>
+            <li>🌸 Dijauhkan dari kesedihan.</li>
+            <li>🌸 Menjadi pribadi yang lebih baik.</li>
+            <li>🌸 Semua doa dikabulkan.</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    💖 Dibuat dengan penuh doa dan kebahagiaan
+    untuk merayakan Sweet Sixteen Rizka Yuniar 💖
+</footer>
+
+<script>
+let sudahTiup=false;
+
+function tiupLilin(){
+    if(!sudahTiup){
+
+        document.getElementById("cake").innerHTML="🍰";
+
+        document.getElementById("status").innerHTML=
+        "🎉 Selamat! Lilinnya sudah ditiup! Semoga semua harapan terkabul.";
+
+        sudahTiup=true;
+
+        confetti();
+    }
+}
+
+function bukaSurat(){
+    let surat=document.getElementById("surat");
+
+    if(surat.style.display==="block"){
+        surat.style.display="none";
+    }else{
+        surat.style.display="block";
+    }
+}
+
+function tampilkanHarapan(){
+    let harapan=document.getElementById("harapan");
+
+    if(harapan.style.display==="block"){
+        harapan.style.display="none";
+    }else{
+        harapan.style.display="block";
+    }
+}
+
+function confetti(){
+
+    let warna=[
+        "#ff4f8b",
+        "#ffcc00",
+        "#66ccff",
+        "#66ff99",
+        "#cc99ff",
+        "#ff9966"
+    ];
+
+    for(let i=0;i<180;i++){
+
+        let c=document.createElement("div");
+
+        c.className="confetti";
+
+        c.style.left=Math.random()*100+"vw";
+
+        c.style.background=
+        warna[Math.floor(Math.random()*warna.length)];
+
+        c.style.animationDuration=
+        (Math.random()*3+2)+"s";
+
+        document.body.appendChild(c);
+
+        setTimeout(()=>{
+            c.remove();
+        },5000);
+    }
+}
+</script>
+
+</body>
+</html
